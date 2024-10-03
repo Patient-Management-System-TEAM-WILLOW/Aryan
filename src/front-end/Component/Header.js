@@ -34,23 +34,23 @@ function HeaderWithSidebar() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/profile" className="d-flex align-items-center py-2 px-3">
-                                        <i className="bi bi-person-circle me-2"></i> Profile
+                                    <Link to="/doctormanagement" className="d-flex align-items-center py-2 px-3">
+                                    <i class="bi bi-person-plus-fill"style={{marginRight:'8px'}}></i> Doctor Management
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/change-password" className="d-flex align-items-center py-2 px-3">
-                                        <i className="bi bi-key-fill me-2"></i> Change Password
+                                    <Link to="/patientmanagement" className="d-flex align-items-center py-2 px-3">
+                                    <i class="bi bi-person-fill"style={{marginRight:'8px'}}></i> Pateint Management
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/terms" className="d-flex align-items-center py-2 px-3">
-                                        <i className="bi bi-file-earmark-text me-2"></i> Terms & Conditions
+                                    <i class="bi bi-credit-card-fill" style={{marginRight:'8px'}}></i>  Billing & Payments
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/privacy" className="d-flex align-items-center py-2 px-3">
-                                        <i className="bi bi-lock-fill me-2"></i> Privacy Policy
+                                    <i class="bi bi-clipboard-data"style={{marginRight:'8px'}}></i> Reporting And Analyutics
                                     </Link>
                                 </li>
                             </ul>
