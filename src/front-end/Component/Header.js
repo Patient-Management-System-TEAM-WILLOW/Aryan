@@ -39,7 +39,7 @@ function HeaderWithSidebar() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/patientmanagement" className="d-flex align-items-center py-2 px-3">
+                                    <Link to="/precriptionas" className="d-flex align-items-center py-2 px-3">
                                     <i class="bi bi-person-fill"style={{marginRight:'8px'}}></i> Pateint Management
                                     </Link>
                                 </li>
@@ -119,3 +119,6 @@ function HeaderWithSidebar() {
 }
 
 export default HeaderWithSidebar;
+
+
+

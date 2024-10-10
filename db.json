@@ -112,5 +112,27 @@
       "city": "Surat",
       "zipcode": "23211"
     }
+  ],
+  "pusers": [
+   
+    {
+      "id": "ff8e",
+      "firstName": "Arohi",
+      "lastName": "YADAV",
+      "email": "arohi1@gmail.com",
+      "phone": "8000718603",
+      "age": "23",
+      "height": "31",
+      "weight": "34",
+      "gender": "Female",
+      "bloodGroup": "b+",
+      "dob": "2024-10-18",
+      "country": "India",
+      "state": "Gujarat",
+      "city": "Surat",
+      "address": "Madhuram Circle",
+      "password": "23",
+      "cpass": "23"
+    }
   ]
 }

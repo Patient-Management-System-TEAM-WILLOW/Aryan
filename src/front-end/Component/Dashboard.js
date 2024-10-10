@@ -75,7 +75,7 @@ function Dashboard() {
     switch (activeMenu) {
       case "profile":
         return (
-          <div className="profile-info card p-4">
+          <div className="profile-info card p-4" style={{marginBottom:'1850px'}}>
             <h2 className="text-primary mb-4">Profile Setting</h2>
             {/* Profile Form */}
             <div className="row mb-3">
@@ -103,93 +103,93 @@ function Dashboard() {
               </div>
             </div>
             <div className="row mb-3">
-                <div className="col-md-6">
-                  <label className="form-label">Email Address</label>
-                  <input 
-                    type="email" 
-                    name="email" 
-                    value={userData.email} 
-                    onChange={handleInputChange} 
-                    className="form-control" 
-                    disabled={!isEditing} 
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label className="form-label">Phone Number</label>
-                  <input 
-                    type="text" 
-                    name="phone" 
-                    value={userData.phone} 
-                    onChange={handleInputChange} 
-                    className="form-control" 
-                    disabled={!isEditing} 
-                  />
-                </div>
+              <div className="col-md-6">
+                <label className="form-label">Email Address</label>
+                <input 
+                  type="email" 
+                  name="email" 
+                  value={userData.email} 
+                  onChange={handleInputChange} 
+                  className="form-control" 
+                  disabled={!isEditing} 
+                />
               </div>
+              <div className="col-md-6">
+                <label className="form-label">Phone Number</label>
+                <input 
+                  type="text" 
+                  name="phone" 
+                  value={userData.phone} 
+                  onChange={handleInputChange} 
+                  className="form-control" 
+                  disabled={!isEditing} 
+                />
+              </div>
+            </div>
 
-              <div className="row mb-3">
-                <div className="col-md-6">
-                  <label className="form-label">Hospital Name</label>
-                  <input 
-                    type="text" 
-                    name="hospitalName" 
-                    value={userData.hospitalName} 
-                    onChange={handleInputChange} 
-                    className="form-control" 
-                    disabled={!isEditing} 
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label className="form-label">Gender</label>
-                  <input 
-                    type="text" 
-                    name="gender" 
-                    value={userData.gender} 
-                    onChange={handleInputChange} 
-                    className="form-control" 
-                    disabled={!isEditing} 
-                  />
-                </div>
+            <div className="row mb-3">
+              <div className="col-md-6">
+                <label className="form-label">Hospital Name</label>
+                <input 
+                  type="text" 
+                  name="hospitalName" 
+                  value={userData.hospitalName} 
+                  onChange={handleInputChange} 
+                  className="form-control" 
+                  disabled={!isEditing} 
+                />
               </div>
+              <div className="col-md-6">
+                <label className="form-label">Gender</label>
+                <input 
+                  type="text" 
+                  name="gender" 
+                  value={userData.gender} 
+                  onChange={handleInputChange} 
+                  className="form-control" 
+                  disabled={!isEditing} 
+                />
+              </div>
+            </div>
 
-              <div className="row mb-3">
-                <div className="col-md-6">
-                  <label className="form-label">City</label>
-                  <input 
-                    type="text" 
-                    name="city" 
-                    value={userData.city} 
-                    onChange={handleInputChange} 
-                    className="form-control" 
-                    disabled={!isEditing} 
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label className="form-label">State</label>
-                  <input 
-                    type="text" 
-                    name="state" 
-                    value={userData.state} 
-                    onChange={handleInputChange} 
-                    className="form-control" 
-                    disabled={!isEditing} 
-                  />
-                </div>
+            <div className="row mb-3">
+              <div className="col-md-6">
+                <label className="form-label">City</label>
+                <input 
+                  type="text" 
+                  name="city" 
+                  value={userData.city} 
+                  onChange={handleInputChange} 
+                  className="form-control" 
+                  disabled={!isEditing} 
+                />
               </div>
+              <div className="col-md-6">
+                <label className="form-label">State</label>
+                <input 
+                  type="text" 
+                  name="state" 
+                  value={userData.state} 
+                  onChange={handleInputChange} 
+                  className="form-control" 
+                  disabled={!isEditing} 
+                />
+              </div>
+            </div>
 
-              <div className="row mb-3">
-                <div className="col-md-6">
-                  <label className="form-label">Country</label>
-                  <input 
-                    type="text" 
-                    name="country" 
-                    value={userData.country} 
-                    onChange={handleInputChange} 
-                    className="form-control" 
-                    disabled={!isEditing} 
-                  />
-                </div>
+            <div className="row mb-3">
+              <div className="col-md-6">
+                <label className="form-label">Country</label>
+                <input 
+                  type="text" 
+                  name="country" 
+                  value={userData.country} 
+                  onChange={handleInputChange} 
+                  className="form-control" 
+                  disabled={!isEditing} 
+                />
               </div>
+            </div>
             <div className="text-end">
               {isEditing ? (
                 <button className="btn btn-success me-3" onClick={handleSave}>
@@ -263,11 +263,11 @@ function Dashboard() {
   };
 
   return (
-    <div className="dashboard-wrapper d-flex justify-content-center align-items-center">
-      <div className="dashboard-section">
-        <div className="d-flex">
+    <div className="dashboard-wrapper d-flex justify-content-center align-items-center min-vh-100">
+      <div className="dashboard-section d-flex justify-content-center align-items-center" style={{ width: '100%', maxWidth: '1200px' }}>
+        <div className="d-flex w-100">
           {/* Sidebar */}
-          <div className="sidebars p-4 bg-light">
+          <div className="sidebars p-4 bg-light" style={{ minWidth: '300px' }}>
             <div className="text-center mb-4">
               <img
                 src={userData.profilePicture || "https://via.placeholder.com/100"}
@@ -330,7 +330,7 @@ function Dashboard() {
           </div>
 
           {/* Main Content */}
-          <div className="content-container ms-4 p-4">{renderContent()}</div>
+          <div className="content-container ms-4 p-4 flex-grow-1">{renderContent()}</div>
         </div>
       </div>
     </div>
