@@ -56,7 +56,7 @@ const PatientDashboard = () => {
         <div>
           <div className="text-center mb-4">
             <img
-              src="https://www.shutterstock.com/image-vector/medical-logo-healthcare-pharmacy-design-260nw-2281411385.jpg"
+              src="https://i.pinimg.com/564x/e3/59/47/e3594778bad088a0582c7638ffa4333c.jpg"
               alt="Logo"
               className="img-fluid"
               style={{ width: "100px", height: "80px", borderRadius: "8px" }}
@@ -67,12 +67,12 @@ const PatientDashboard = () => {
               <FaFileMedical className="me-2" /> Personal Health Record
             </li>
             <li className="mb-3">
-              <Link to="apbooke" style={{ textDecoration: 'none' ,color:'black'}}>
+              <Link to="/home/:userId/apbooke" style={{ textDecoration: 'none' ,color:'black'}}>
                 <FaFilePrescription className="me-2" />Appointment Booking
               </Link>
             </li>
             <li className="mb-3">
-            <FaFilePrescription/> <Link to="precriptionas" style={{ textDecoration: 'none' ,color:'black'}}>Prescription Access</Link>
+            <FaFilePrescription/> <Link to="/home/:userId/p" style={{ textDecoration: 'none' ,color:'black'}}>Prescription Access</Link>
             </li>
             <li className="mb-3">
               <Dropdown>
@@ -80,14 +80,14 @@ const PatientDashboard = () => {
                   <FaFileMedical className="me-2" /> Bill and Payments
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                  <Dropdown.Item><Link style={{ textDecoration: 'none',color:"black" }} to="bills">Monitor Bill</Link></Dropdown.Item>
-                  <Dropdown.Item><Link style={{ textDecoration: 'none',color:"black" }} to="bills">Insurance Claims</Link></Dropdown.Item>
-                  <Dropdown.Item><Link style={{ textDecoration: 'none',color:'black'}} to="bills">Payment Process</Link></Dropdown.Item>
+                  <Dropdown.Item><Link style={{ textDecoration: 'none',color:"black" }} to="/home/:userId/bills">Monitor Bill</Link></Dropdown.Item>
+                  <Dropdown.Item><Link style={{ textDecoration: 'none',color:"black" }} to="/home/:userId/ibills">Insurance Claims</Link></Dropdown.Item>
+                  <Dropdown.Item><Link style={{ textDecoration: 'none',color:'black'}} to="/home/:userId/detailbills">Payment Process</Link></Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </li>
             <li className="mb-3">
-            <FaFileMedical className="me-2" /> <Link to="precriptionas" style={{ textDecoration: 'none' ,color:'black'}}>Report Analytics</Link>
+            <FaFileMedical className="me-2" /> <Link to="/home/:userId/reportan" style={{ textDecoration: 'none' ,color:'black'}}>Report Analytics</Link>
             </li>
           </ul>
         </div>

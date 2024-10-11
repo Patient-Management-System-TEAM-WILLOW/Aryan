@@ -262,6 +262,7 @@ function Reg() {
                     style={styles.submitButton}
                 />
                 <Link to='/signin' style={styles.link}>Already have an account? Login</Link>
+                <Link to='/preg' style={styles.link} >Pateint  Login</Link>
             </form>
             
             {/* Hospital Modal */}

@@ -15,7 +15,7 @@ function ReportAnalytics() {
         <div>
           <div className="text-center mb-4">
             <img
-              src="https://www.shutterstock.com/image-vector/medical-logo-healthcare-pharmacy-design-260nw-2281411385.jpg"
+              src="https://i.pinimg.com/564x/e3/59/47/e3594778bad088a0582c7638ffa4333c.jpg"
               alt="Logo"
               className="img-fluid"
               style={{ width: "100px", height: "80px", borderRadius: "8px" }}

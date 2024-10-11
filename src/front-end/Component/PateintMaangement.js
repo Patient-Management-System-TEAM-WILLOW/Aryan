@@ -1,8 +1,18 @@
 import React, { useState } from "react";
-import { FaEye } from "react-icons/fa"; // Icon for the 'view' action
-import { FaSearch } from "react-icons/fa"; // Icon for the search
+
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap for styles
-import '../Component/Pateintmanagement.css'; // Importing CSS file for custom styles
+import '../Component/Pateintmanagement.css'; // Importing CSS file for custom stylesimport {
+
+import {
+  FaBell, FaEye,
+  FaEdit,
+  FaFileMedical,
+  FaFilePrescription, FaCalendarAlt,
+  FaHeartbeat,FaHospital,FaFileAlt,FaVirus,FaSearch
+} from "react-icons/fa";
+
+import { Link } from "react-router-dom";
+import { Modal, Dropdown } from "react-bootstrap";
 
 function PatientManagement() {
   // Sample patient data
@@ -149,7 +159,67 @@ function PatientManagement() {
   };
 
   return (
-    <div className=" width">
+    <div className=" width" style={{marginTop:"80px"}}>
+       <div className="sidebar bg-light p-4" style={{ width: '220px', height: '100vh', position: 'fixed', top: 0, left: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        <div>
+          <div className="text-center mb-4">
+            <img
+              src="https://i.pinimg.com/564x/e3/59/47/e3594778bad088a0582c7638ffa4333c.jpg"
+              alt="Logo"
+              className="img-fluid"
+              style={{ width: "100px", height: "80px", borderRadius: "8px" }}
+            />
+          </div>
+          <ul className="list-unstyled text-center">
+            <li className="mb-3">
+              <FaFileMedical className="me-2" /> Personal Health Record
+            </li>
+            <li className="mb-3">
+              <Link to="/home/:userId/apbooke" style={{ textDecoration: 'none' ,color:'black'}}>
+                <FaFilePrescription className="me-2" />Appointment Booking
+              </Link>
+            </li>
+            <li className="mb-3">
+            <FaFilePrescription/> <Link to="/home/:userId/p" style={{ textDecoration: 'none' ,color:'black'}}>Prescription Access</Link>
+            </li>
+            <li className="mb-3">
+              <Dropdown>
+                <Dropdown.Toggle variant="light">
+                  <FaFileMedical className="me-2" /> Bill and Payments
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item><Link style={{ textDecoration: 'none',color:"black" }} to="/home/:userId/bills">Monitor Bill</Link></Dropdown.Item>
+                  <Dropdown.Item><Link style={{ textDecoration: 'none',color:"black" }} to="/home/:userId/ibills">Insurance Claims</Link></Dropdown.Item>
+                  <Dropdown.Item><Link style={{ textDecoration: 'none',color:'black'}} to="/home/:userId/detailbills">Payment Process</Link></Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </li>
+            <li className="mb-3">
+            <FaFileMedical className="me-2" /> <Link to="/home/:userId/reportan" style={{ textDecoration: 'none' ,color:'black'}}>Report Analytics</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="text-center">
+          <button className="btn btn-primary w-100 mb-3">Book Appointment</button>
+          <button className="btn btn-danger w-100" >Logout</button>
+        </div>
+      </div>
+
+      <header className="header d-flex align-items-center justify-content-between px-4 py-2 bg-light mb-4">
+        <div className="search-bar">
+          <input type="text" className="form-control" placeholder="Search..." />
+        </div>
+        <div className="user-info d-flex align-items-center">
+          <FaBell size={24} />
+          <span className="me-3">Lincoln Philips</span>
+          <img
+            src="https://via.placeholder.com/50"
+            alt="User"
+            className="rounded-circle ms-3"
+            style={{ width: "50px" }}
+          />
+        </div>
+      </header>
       <div className="appointment-nav">
         <a href="#" className="nav-link active">Today Appointment</a>
         <a href="#" className="nav-link">Upcoming Appointment</a>

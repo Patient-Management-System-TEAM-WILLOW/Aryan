@@ -143,7 +143,7 @@ function PateintLog() {
                 )}
             </div>
             <div style={styles.rightColumn}>
-                <img src="/path-to-your-image.png" alt="Hospital Illustration" style={styles.image} />
+                <img src="https://cdn.vectopus.com/getillustrations/illustrations/48195F5B15FF/1E8B3BF8B254/icons-medical-profession-doctor-hospital-healthcare-health-man-care-report-treatment-1024.png" alt="Hospital Illustration" style={styles.image} />
                 <h2 style={styles.hospitalTitle}>Hospital</h2>
                 <p style={styles.hospitalTagline}>You can stay in touch with your hospital and contact your facility anytime!</p>
             </div>

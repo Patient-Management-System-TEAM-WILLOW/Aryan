@@ -39,16 +39,16 @@ function App() {
                   <Route path="/plog" element={<PateintLog/>} />
                   <Route path="/signin" element={<SignIn/>} />
                   <Route path="/home/:userId" element={<PatientDashboard/>} />
-                  <Route path="p" element={<Prescription/>} />
-                  <Route path="bookappointeme" element={<Bookappointement/>} />
-                  <Route path="bills" element={<MonitorBilling/>} />
-                  <Route path="ibills" element={<InsuranceBill/>} />
-                  <Route path='detailbills' element={<BillDetails/>}/>
+                  <Route path="/home/:userId/p" element={<Prescription/>} />
+                  <Route path="/home/:userId/bookappointeme" element={<Bookappointement/>} />
+                  <Route path="/home/:userId/bills" element={<MonitorBilling/>} />
+                  <Route path="/home/:userId/ibills" element={<InsuranceBill/>} />
+                  <Route path='/home/:userId/detailbills' element={<BillDetails/>}/>
                   <Route path="/home/:userId" element={< Dashboard/>} />
-                  <Route path="/apbooke" element={<AppointmentBook/>} />
-                  <Route path="/reportan" element={<ReportAnalytics/>} />
+                  <Route path="/home/:userId/apbooke" element={<AppointmentBook/>} />
+                  <Route path="/home/:userId/reportan" element={<ReportAnalytics/>} />
                   <Route path="/doctormanagement" element={< DoctorManagement/>} />
-                  <Route path="/patientmanagement" element={< Pateintmanagement/>} />
+                  <Route path="/home/:userId/patientmanagement" element={< Pateintmanagement/>} />
                  
                 
                   

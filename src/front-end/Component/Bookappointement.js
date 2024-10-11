@@ -71,11 +71,11 @@ function Bookappointement() {
 
   return (
     <div className="prescription-container">
-        <div className="sidebar bg-light p-4" style={{ width: '220px', height: '100vh', position: 'fixed', top: 0, left: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+             <div className="sidebar bg-light p-4" style={{ width: '220px', height: '100vh', position: 'fixed', top: 0, left: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         <div>
           <div className="text-center mb-4">
             <img
-              src="https://www.shutterstock.com/image-vector/medical-logo-healthcare-pharmacy-design-260nw-2281411385.jpg"
+              src="https://i.pinimg.com/564x/e3/59/47/e3594778bad088a0582c7638ffa4333c.jpg"
               alt="Logo"
               className="img-fluid"
               style={{ width: "100px", height: "80px", borderRadius: "8px" }}
@@ -106,13 +106,13 @@ function Bookappointement() {
               </Dropdown>
             </li>
             <li className="mb-3">
-            <FaFileMedical className="me-2" /> <Link to="precriptionas" style={{ textDecoration: 'none' ,color:'black'}}>Report Analytics</Link>
+             <FaFileMedical className="me-2" /> <Link to="precriptionas" style={{ textDecoration: 'none' ,color:'black'}}>Report Analytics</Link>
             </li>
           </ul>
         </div>
         <div className="text-center">
           <button className="btn btn-primary w-100 mb-3">Book Appointment</button>
-          <button className="btn btn-danger w-100" >Logout</button>
+          <button className="btn btn-danger w-100">Logout</button>
         </div>
       </div>
 

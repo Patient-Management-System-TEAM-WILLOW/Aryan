@@ -3,6 +3,7 @@ import Axios from "axios";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router-dom";
 
 function PatientReg() {
   let [puser, setUser] = useState({
@@ -149,10 +150,11 @@ function PatientReg() {
           </div>
 
           <input type="submit" value="Register" style={styles.submitButton} />
+          <Link to='/plog' style={styles.link}>Already have an account? Login</Link>
         </form>
 
         <div style={styles.imageContainer}>
-          <img src="path_to_your_image" alt="Hospital" style={styles.image} />
+          <img src="https://cdn.vectopus.com/getillustrations/illustrations/48195F5B15FF/1E8B3BF8B254/icons-medical-profession-doctor-hospital-healthcare-health-man-care-report-treatment-1024.png" alt="Hospital" style={styles.image} />
           <h2 style={styles.imageText}>Hospital</h2>
           <p style={styles.imageSubText}>You can stay in your hospital and contact your facility</p>
         </div>
@@ -170,6 +172,8 @@ const styles = {
     alignItems: 'center',
     minHeight: '100vh',
     backgroundColor: '#f5f5f5',
+
+    
   },
   page: {
     display: 'flex',
@@ -178,6 +182,7 @@ const styles = {
     borderRadius: '10px',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
     overflow: 'hidden',
+
   },
   form: {
     width: '50%',
@@ -238,4 +243,11 @@ const styles = {
     textAlign: 'center',
     marginTop: '10px',
   },
+  link: {
+    display: 'block',
+    textAlign: 'center',
+    marginTop: '15px',
+    color: '#007bff',
+    textDecoration: 'none',
+},
 };
