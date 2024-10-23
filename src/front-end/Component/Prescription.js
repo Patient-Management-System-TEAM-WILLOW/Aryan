@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Modal, Dropdown } from "react-bootstrap";
 import {
     FaBell, FaEye,
     FaEdit,
@@ -85,32 +86,51 @@ function Prescrtion() {
 
   return (
     <div className="appointments-container">
-          <div className="sidebar bg-light p-4" >
-        <div className="mb-4 "><img
-              src="https://www.shutterstock.com/image-vector/medical-logo-healthcare-pharmacy-design-260nw-2281411385.jpg"
-              alt="User"
-              className=" ms-3"
-              style={{ width: "100px",height:'80px' }}
-            /></div>
-        <ul className="list-unstyled text-center">
-          <li className="mb-3">
-            <FaFileMedical /> Personal Health Record
-          </li>
-          <li className="mb-3">
-            <Link to="apbooke"><FaFilePrescription /> Appointment Booking</Link>
-            
-          </li>
-          <li className="mb-3"> 
- <Link to="precriptionas"> Prescription Access </Link>      
-          </li>
-          <li className="mb-3"><i class="bi bi-file-medical"style={{marginRight:'10px'}}></i>Teleconsultation Access
-          </li>
-          <li className="mb-3" style={{marginRight:'100px'}}><i class="bi bi-chat-left-dots" style={{marginRight:'15px'}}></i>Chat
-          </li>
-          <li className="mb-3" style={{marginRight:'110px'}}> <i class="bi bi-receipt" style={{marginRight:'15px'}}></i>Bill
-          </li>
-        </ul>
-        <button className="btn btn-primary w-100">Book Appointment</button>
+      <div className="sidebar bg-light p-4" style={{ width: '220px', height: '100vh', position: 'fixed', top: 0, left: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        <div>
+          <div className="text-center mb-4">
+            <img
+              src="https://i.pinimg.com/564x/e3/59/47/e3594778bad088a0582c7638ffa4333c.jpg"
+              alt="Logo"
+              className="img-fluid"
+              style={{ width: "100px", height: "80px", borderRadius: "8px" }}
+            />
+          </div>
+          <ul className="list-unstyled text-center">
+            <li className="mb-3">
+            <Link to="/home/:userId" style={{ textDecoration: "none", color: "black" }}>
+              <FaFileMedical className="me-2" /> Personal Health Record
+              </Link>
+            </li>
+            <li className="mb-3">
+              <Link to="/home/:userId/apbooke" style={{ textDecoration: 'none' ,color:'black'}}>
+                <FaFilePrescription className="me-2" />Appointment Booking
+              </Link>
+            </li>
+            <li className="mb-3">
+            <FaFilePrescription/> <Link to="/home/:userId/p" style={{ textDecoration: 'none' ,color:'black'}}>Prescription Access</Link>
+            </li>
+            <li className="mb-3">
+              <Dropdown>
+                <Dropdown.Toggle variant="light">
+                  <FaFileMedical className="me-2" /> Bill and Payments
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item><Link style={{ textDecoration: 'none',color:"black" }} to="/home/:userId/bills">Monitor Bill</Link></Dropdown.Item>
+                  <Dropdown.Item><Link style={{ textDecoration: 'none',color:"black" }} to="/home/:userId/ibills">Insurance Claims</Link></Dropdown.Item>
+                  <Dropdown.Item><Link style={{ textDecoration: 'none',color:'black'}} to="/home/:userId/detailbills">Payment Process</Link></Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </li>
+            <li className="mb-3">
+            <FaFileMedical className="me-2" /> <Link to="/home/:userId/reportan" style={{ textDecoration: 'none' ,color:'black'}}>Report Analytics</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="text-center">
+          <button className="btn btn-primary w-100 mb-3" >Book Appointment</button>
+          <button className="btn btn-danger w-100" >Logout</button>
+        </div>
       </div>
       <header className="header d-flex align-items-center justify-content-between px-4 py-2 bg-light mb-4">
           <div className="search-bar">

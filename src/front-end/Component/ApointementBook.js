@@ -132,7 +132,7 @@ function AppointmentBook() {
           <button className="btn btn-danger w-100" >Logout</button>
         </div>
       </div>
-<header className="header d-flex align-items-center justify-content-between px-4 py-2 bg-light mb-4">
+      <header className="header d-flex align-items-center justify-content-between px-4 py-2 bg-light mb-4">
           <div className="search-bar">
             <input type="text" className="form-control" placeholder="Search..." />
           </div>

@@ -172,7 +172,9 @@ function PatientManagement() {
           </div>
           <ul className="list-unstyled text-center">
             <li className="mb-3">
+            <Link to="/home/:userId" style={{ textDecoration: "none", color: "black" }}>
               <FaFileMedical className="me-2" /> Personal Health Record
+              </Link>
             </li>
             <li className="mb-3">
               <Link to="/home/:userId/apbooke" style={{ textDecoration: 'none' ,color:'black'}}>
@@ -200,26 +202,25 @@ function PatientManagement() {
           </ul>
         </div>
         <div className="text-center">
-          <button className="btn btn-primary w-100 mb-3">Book Appointment</button>
+          <button className="btn btn-primary w-100 mb-3" >Book Appointment</button>
           <button className="btn btn-danger w-100" >Logout</button>
         </div>
       </div>
-
       <header className="header d-flex align-items-center justify-content-between px-4 py-2 bg-light mb-4">
-        <div className="search-bar">
-          <input type="text" className="form-control" placeholder="Search..." />
-        </div>
-        <div className="user-info d-flex align-items-center">
-          <FaBell size={24} />
-          <span className="me-3">Lincoln Philips</span>
-          <img
-            src="https://via.placeholder.com/50"
-            alt="User"
-            className="rounded-circle ms-3"
-            style={{ width: "50px" }}
-          />
-        </div>
-      </header>
+          <div className="search-bar">
+            <input type="text" className="form-control" placeholder="Search..." />
+          </div>
+          <div className="user-info d-flex align-items-center">
+            <FaBell size={24} />
+            <span className="me-3">Lincoln Philips</span>
+            <img
+              src="https://via.placeholder.com/50"
+              alt="User"
+              className="rounded-circle ms-3"
+              style={{ width: "50px" }}
+            />
+          </div>
+        </header>
       <div className="appointment-nav">
         <a href="#" className="nav-link active">Today Appointment</a>
         <a href="#" className="nav-link">Upcoming Appointment</a>
