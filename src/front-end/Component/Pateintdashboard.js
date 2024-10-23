@@ -4,11 +4,50 @@ import {
   FaBell, FaEye,
   FaEdit,
   FaFileMedical,
-  FaFilePrescription,
-  FaHeartbeat,FaHospital,FaFileAlt,FaVirus,
+ FaHospital,FaFileAlt,FaVirus,FaFilePrescription,
+  FaCalendarAlt,
+  FaHeartbeat,
 } from "react-icons/fa";
 import { Modal, Button,Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "../Component/Apointement.css";
+
+const AppointmentCard = ({ doctor, onCancel, onReschedule }) => {
+  const [appointments, setAppointments] = useState([
+    { id: 1, name: "Dr. Nolan George", type: "Online", hospital: "Shambua Hospital", time: "10:20 AM", issue: "Feeling Tired", icon: <FaEye /> },
+    { id: 2, name: "Dr. Cristofer", type: "Online", hospital: "Shambua Hospital", time: "10:20 AM", issue: "Feeling Tired", icon: <FaEye /> },
+    { id: 3, name: "Dr. Davis Donin", type: "Online", hospital: "Shambua Hospital", time: "10:20 AM", issue: "Feeling Tired", icon: <FaEye /> },
+    { id: 4, name: "Dr. Terry Calzoni", type: "Online", hospital: "Shambua Hospital", time: "10:20 AM", issue: "Feeling Tired", icon: <FaEye /> },
+  ]);
+  return (
+    <div className="appointment-card" style={{ marginTop: "180px" }}>
+      <span className="s">{doctor.name}</span>
+      <span style={{ marginLeft: "80px", color: "#00a6ff" }}>{doctor.icon}</span>
+      <p>
+        Appointment Type: <span>{doctor.type}</span>
+      </p>
+      <p>
+        Hospital Name: <span>{doctor.hospital}</span>
+      </p>
+      <p>
+        Appointment Time: <span>{doctor.time}</span>
+      </p>
+      <p>
+        Patient Issue: <span>{doctor.issue}</span>
+      </p>
+      <div className="buttons">
+        <button className="cancel-btn" onClick={() => onCancel(doctor.id)}>
+          <FaCalendarAlt /> Cancel
+        </button>
+        <button className="reschedule-btn" onClick={() => onReschedule(doctor.id)}>
+          <FaCalendarAlt /> Reschedule
+        </button>
+      </div>
+    </div>
+  );
+};
+
+
 
 const PatientDashboard = () => {
   const [userData, setUserData] = useState({
@@ -30,6 +69,30 @@ const PatientDashboard = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [formData, setFormData] = useState({
+    specialty: "",
+    country: "",
+    state: "",
+    city: "",
+    hospital: "",
+    doctor: "",
+    appointmentTime: "",
+  });
+
+ 
+
+ 
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleFormSubmit = () => {
+    localStorage.setItem("appointmentFormData", JSON.stringify(formData));
+    setShowPopup(false); // Close popup after submission
+    alert("Appointment data saved in local storage");
+  };
 
   const handleEdit = () => {
     setIsEditing(!isEditing);
@@ -48,6 +111,7 @@ const PatientDashboard = () => {
     const { name, value } = e.target;
     setUserData((prevData) => ({ ...prevData, [name]: value }));
   };
+  
 
   return (
     <div className="dashboard-wrapper d-flex justify-content-center">
@@ -64,7 +128,9 @@ const PatientDashboard = () => {
           </div>
           <ul className="list-unstyled text-center">
             <li className="mb-3">
+            <Link to="/home/:userId" style={{ textDecoration: "none", color: "black" }}>
               <FaFileMedical className="me-2" /> Personal Health Record
+              </Link>
             </li>
             <li className="mb-3">
               <Link to="/home/:userId/apbooke" style={{ textDecoration: 'none' ,color:'black'}}>
@@ -92,7 +158,7 @@ const PatientDashboard = () => {
           </ul>
         </div>
         <div className="text-center">
-          <button className="btn btn-primary w-100 mb-3">Book Appointment</button>
+          <button className="btn btn-primary w-100 mb-3"onClick={() => setShowPopup(true)}>Book Appointment</button>
           <button className="btn btn-danger w-100" >Logout</button>
         </div>
       </div>
@@ -343,6 +409,46 @@ const PatientDashboard = () => {
           </div>
         </div>
 
+      {/* <div className="appointment-cards"> 
+        {appointments.map((doctor) => (
+          <AppointmentCard key={doctor.id} doctor={doctor}  />
+        ))}
+      </div> */}
+
+      {showPopup && (
+        <div className="popup-form-overlay">
+          <div className="popup-form">
+            <h3>Book Appointment</h3>
+            <form>
+              <label>Specialty:</label>
+              <input type="text" name="specialty" value={formData.specialty} onChange={handleFormChange} />
+
+              <label>Country:</label>
+              <input type="text" name="country" value={formData.country} onChange={handleFormChange} />
+
+              <label>State:</label>
+              <input type="text" name="state" value={formData.state} onChange={handleFormChange} />
+
+              <label>City:</label>
+              <input type="text" name="city" value={formData.city} onChange={handleFormChange} />
+
+              <label>Hospital:</label>
+              <input type="text" name="hospital" value={formData.hospital} onChange={handleFormChange} />
+
+              <label>Doctor:</label>
+              <input type="text" name="doctor" value={formData.doctor} onChange={handleFormChange} />
+
+              <label>Appointment Time:</label>
+              <input type="time" name="appointmentTime" value={formData.appointmentTime} onChange={handleFormChange} />
+
+              <div className="popup-buttons">
+                <button type="button" onClick={handleFormSubmit}>Save</button>
+                <button type="button" onClick={() => setShowPopup(false)}>Close</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
         {/* Modal */}
         <Modal show={showModal} onHide={handleModalClose}>
           <Modal.Header closeButton>

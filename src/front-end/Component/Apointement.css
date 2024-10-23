@@ -29,6 +29,7 @@
     font-size: 24px;
     font-weight: bold;
     color: #333;
+   
   }
   
   .date-picker {
@@ -64,6 +65,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-right: 400px;
   }
   
   #bookAppointment:hover {
@@ -148,5 +150,158 @@
   
   .reschedule-btn:hover {
     background-color: #e0a800;
+  }
+  .popup-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Background overlay for popup */
+.popup-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* Darker overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Make sure it stays above other content */
+}
+
+/* Styling for the popup form */
+.popup-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Form header */
+.popup-form h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Form labels */
+.popup-form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Input styling */
+.popup-form input[type="text"],
+.popup-form input[type="time"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+.popup-form input[type="text"]:focus,
+.popup-form input[type="time"]:focus {
+  border-color: #00a6ff; /* Highlight border color */
+  outline: none;
+}
+
+/* Button styling */
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.popup-buttons button {
+  width: 48%;
+  padding: 10px 0;
+  background-color: #00a6ff;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Close button */
+.popup-buttons button:nth-child(2) {
+  background-color: #ff4d4d; /* Red for cancel button */
+}
+
+.popup-buttons button:hover {
+  background-color: #008ccc; /* Darker blue on hover */
+}
+
+.popup-buttons button:nth-child(2):hover {
+  background-color: #e63939; /* Darker red on hover */
+}
+
+/* Add some space between the input fields and popup buttons */
+.popup-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-form form label + input {
+  margin-bottom: 20px;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .popup-form {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .popup-buttons button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+  
+  .popup-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 100%;
+  }
+  
+  .popup-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .popup-buttons button {
+    width: 48%;
   }
   
